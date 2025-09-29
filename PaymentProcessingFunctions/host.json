@@ -1,0 +1,36 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "maxTelemetryItemsPerSecond": 20
+      }
+    },
+    "logLevel": {
+      "default": "Information",
+      "Function": "Information",
+      "Host.Results": "Information"
+    }
+  },
+  "extensions": {
+    "serviceBus": {
+      "prefetchCount": 100,
+      "messageHandlerOptions": {
+        "autoComplete": false,
+        "maxConcurrentCalls": 32,
+        "maxAutoRenewDuration": "00:05:00"
+      },
+      "sessionHandlerOptions": {
+        "autoComplete": false,
+        "maxConcurrentSessions": 16,
+        "maxAutoRenewDuration": "00:05:00"
+      }
+    },
+    "eventGrid": {
+      "maxEventsPerBatch": 100,
+      "preferredBatchSizeInKilobytes": 64
+    }
+  },
+  "functionTimeout": "00:10:00"
+}
