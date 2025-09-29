@@ -20,7 +20,7 @@ using PaymentProcessingFunctions.Services;
  */
 
 var host = new HostBuilder()
-    .ConfigureFunctionsWebApplication()
+    .ConfigureFunctionsWorkerDefaults()
     .ConfigureServices((context, services) =>
     {
         // Add Application Insights for monitoring and telemetry
