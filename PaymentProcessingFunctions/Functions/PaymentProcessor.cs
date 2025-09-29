@@ -46,8 +46,11 @@ public class PaymentProcessor
             {
                 await messageActions.DeadLetterMessageAsync(
                     message,
-                    "DeserializationFailed",
-                    "Could not deserialize PaymentStatus");
+                    new Dictionary<string, object>
+                    {
+                        { "DeadLetterReason", "DeserializationFailed" },
+                        { "DeadLetterErrorDescription", "Could not deserialize PaymentStatus" }
+                    });
                 return;
             }
 
@@ -126,8 +129,11 @@ public class PaymentProcessor
             {
                 await messageActions.DeadLetterMessageAsync(
                     message,
-                    "ProcessingFailed",
-                    ex.Message);
+                    new Dictionary<string, object>
+                    {
+                        { "DeadLetterReason", "ProcessingFailed" },
+                        { "DeadLetterErrorDescription", ex.Message }
+                    });
             }
             else
             {
