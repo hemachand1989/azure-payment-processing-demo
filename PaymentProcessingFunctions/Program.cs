@@ -25,7 +25,6 @@ var host = new HostBuilder()
     {
         // Add Application Insights for monitoring and telemetry
         services.AddApplicationInsightsTelemetryWorkerService();
-        services.ConfigureFunctionsApplicationInsights();
 
         // Register ServiceBusClient as a singleton
         // Singleton pattern ensures we reuse the same connection across all function invocations
