@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "ServiceBusConnection": "<your-servicebus-connection-string>",
+    "EventGridTopicEndpoint": "<your-eventgrid-topic-endpoint>",
+    "EventGridTopicKey": "<your-eventgrid-topic-key>",
+    "ShippingWebhookUrl": "https://webhook.site/your-unique-id-1",
+    "InventoryWebhookUrl": "https://webhook.site/your-unique-id-2"
+  }
+}
